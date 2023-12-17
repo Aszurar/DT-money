@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {   
+  :focus-visible {
+      @apply ring-2 ring-green-300 outline-none
+    }
+    
+  ::selection {
+      @apply text-white bg-green-700
+  }
+
+  html {      
+    font-family: 'Roboto', sans-serif;
+    
+      @media (max-width: 640px) {
+          font-size: 87.5%;
+      }
+  }
+
+::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+::-webkit-scrollbar-track {
+      @apply dark:bg-zinc-700 rounded-lg
+    }
+ 
+::-webkit-scrollbar-thumb {
+      @apply bg-green-500 rounded-lg 
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+      @apply bg-green-300
+  }
+}
