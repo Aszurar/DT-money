@@ -5,7 +5,7 @@ import { Dashboard } from './components/Dashboard'
 
 export function App() {
   return (
-    <div className="antialiased min-h-screen bg-gray-800">
+    <div className="min-h-screen bg-gray-800 antialiased">
       <Header />
       <Dashboard />
     </div>
