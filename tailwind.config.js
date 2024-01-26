@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss/plugin'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -10,17 +12,21 @@ export default {
 
       width: {
         highlightcard: '22rem',
+        37: '9.25rem',
       },
 
       minWidth: {
         table: '37.5rem',
+        37: '9.25rem',
       },
 
       height: {
         header: '25vh',
+        13.5: '3.375rem',
       },
       maxWidth: {
         app: '1120px',
+        modal: '535px',
       },
 
       gridTemplateColumns: {
@@ -31,7 +37,10 @@ export default {
         red: {
           300: '#F75A68',
           500: '#AB222E',
-          700: '#7A1921',
+          700: '#AA2834',
+        },
+        dark: {
+          50: 'rgba(0, 0, 0, 0.75)',
         },
         green: {
           300: '#00B37E',
@@ -52,5 +61,13 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.border-top-4-table': {
+          'border-top': '4px solid transparent',
+        },
+      })
+    }),
+  ],
 }
