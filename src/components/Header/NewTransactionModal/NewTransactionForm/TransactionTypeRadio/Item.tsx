@@ -1,5 +1,5 @@
-import { VariantProps, tv } from 'tailwind-variants'
 import * as RadioGroup from '@radix-ui/react-radio-group'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const item = tv({
   base: `group w-full py-4 px-6 bg-gray-700 flex gap-2 rounded-md items-center 

@@ -1,5 +1,5 @@
 import { ComponentProps, ElementType } from 'react'
-import { VariantProps, tv } from 'tailwind-variants'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const icon = tv({
   base: `text-2xl transition-all duration-400 

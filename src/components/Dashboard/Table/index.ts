@@ -1,6 +1,6 @@
-import { Row } from './Row'
-import { Root } from './Root'
 import { Body } from './Body'
 import { Data } from './Data'
+import { Root } from './Root'
+import { Row } from './Row'
 
-export { Body, Data, Row, Root }
+export { Body, Data, Root, Row }

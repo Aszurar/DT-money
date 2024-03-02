@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import { VariantProps, tv } from 'tailwind-variants'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const button = tv({
   base: `flex text-white font-bold px-5 py-3 cursor-pointer transition-all 

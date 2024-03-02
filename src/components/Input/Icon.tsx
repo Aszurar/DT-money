@@ -1,5 +1,5 @@
 import { ComponentProps, ElementType } from 'react'
-import { VariantProps, tv } from 'tailwind-variants'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const icon = tv({
   base: `text-xl text-gray-500 group-focus-within:text-purple-300 

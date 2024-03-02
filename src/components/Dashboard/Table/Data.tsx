@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import { VariantProps, tv } from 'tailwind-variants'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const data = tv({
   base: 'text-gray-300 font-normal',

@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import { VariantProps, tv } from 'tailwind-variants'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const container = tv({
   base: `group flex w-full items-center gap-2 rounded-md border p-4
