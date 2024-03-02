@@ -1,19 +1,26 @@
-import * as zod from 'zod'
-import * as Input from '../../../Input'
-import { Button } from '../../../Button'
-import * as TransactionTypeRadio from './TransactionTypeRadio'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowCircleDown, ArrowCircleUp } from '@phosphor-icons/react'
 import { Controller, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Loading } from '../../../Loading'
+import { toast } from 'sonner'
+import * as zod from 'zod'
+
 import {
   NEW_TRANSACTION_FORM_DEFAULT_VALUES,
   TRANSACTION_TYPE,
 } from '../../../../dto/transaction'
+import { useTransactions } from '../../../../hooks/useTransactions'
+import { Button } from '../../../Button'
+import * as Input from '../../../Input'
+import { Loading } from '../../../Loading'
+import * as TransactionTypeRadio from './TransactionTypeRadio'
+
+type NewTransactionFormProps = {
+  handleChangeModalStatus: (status: boolean) => void
+}
 
 const newTransactionFormSchema = zod.object({
   description: zod.string().trim().min(3, 'É necessário uma descrição'),
-  amount: zod
+  price: zod
     .number({ invalid_type_error: 'É necessário o valor da transação' })
     .positive('O valor precisa ser positivo'),
   category: zod.string().trim().min(3, 'É necessário uma categoria'),
@@ -22,8 +29,13 @@ const newTransactionFormSchema = zod.object({
 
 export type NewTransactionProps = zod.infer<typeof newTransactionFormSchema>
 
-export function NewTransactionForm() {
+export function NewTransactionForm({
+  handleChangeModalStatus,
+}: NewTransactionFormProps) {
+  const { createTransaction } = useTransactions()
+
   const {
+    reset,
     control,
     register,
     handleSubmit,
@@ -36,8 +48,15 @@ export function NewTransactionForm() {
   const submitButtonContent = isSubmitting ? <Loading /> : 'Cadastrar'
 
   async function handleAddNewTransaction(data: NewTransactionProps) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
+    try {
+      await createTransaction(data)
+      reset()
+      handleChangeModalStatus(false)
+      toast.success('Transação cadastrada com sucesso!')
+    } catch (error) {
+      console.error(error)
+      toast.error('Erro ao cadastrar transação')
+    }
   }
 
   return (
@@ -60,10 +79,10 @@ export function NewTransactionForm() {
             <Input.Control
               type="number"
               placeholder="Preço"
-              {...register('amount', { valueAsNumber: true })}
+              {...register('price', { valueAsNumber: true })}
             />
           </Input.Container>
-          <Input.ErrorMessage>{errors.amount?.message}</Input.ErrorMessage>
+          <Input.ErrorMessage>{errors.price?.message}</Input.ErrorMessage>
         </Input.Root>
 
         <Input.Root>
@@ -78,12 +97,11 @@ export function NewTransactionForm() {
         <Controller
           control={control}
           name="type"
-          render={(props) => {
-            console.log(props)
+          render={({ field }) => {
             return (
               <TransactionTypeRadio.Root
-              // value={field.value}
-              // onValueChange={field.onChange}
+                value={field.value}
+                onValueChange={field.onChange}
               >
                 <TransactionTypeRadio.Item
                   variant={TRANSACTION_TYPE.income}

@@ -1,15 +1,22 @@
 import { X } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
+
 import { NewTransactionForm } from './NewTransactionForm'
 
-export function NewTransactionModal() {
+type NewTransactionModalProps = {
+  handleChangeModalStatus: (status: boolean) => void
+}
+
+export function NewTransactionModal({
+  handleChangeModalStatus,
+}: NewTransactionModalProps) {
   return (
     <Dialog.Portal>
-      <Dialog.Overlay className="bg-dark-50 fixed inset-0">
+      <Dialog.Overlay className="fixed inset-0 bg-dark-50">
         <Dialog.Content
-          className={`sm:border-0.5 sm:max-w-modal fixed bottom-0 flex w-full 
-            flex-col gap-2 rounded-t-2xl bg-gray-800 px-6 py-8 
-            sm:bottom-auto sm:left-1/2 sm:top-1/2 sm:mx-auto sm:my-0 
+          className={`sm:border-0.5 fixed bottom-0 flex w-full flex-col 
+            gap-2 rounded-t-2xl bg-gray-800 px-6 py-8 sm:bottom-auto 
+            sm:left-1/2 sm:top-1/2 sm:mx-auto sm:my-0 sm:max-w-modal 
             sm:-translate-x-1/2 sm:-translate-y-1/2 sm:gap-8 
             sm:rounded-md sm:border-purple-300 sm:p-12`}
         >
@@ -28,7 +35,9 @@ export function NewTransactionModal() {
           </header>
 
           <Dialog.Description>
-            <NewTransactionForm />
+            <NewTransactionForm
+              handleChangeModalStatus={handleChangeModalStatus}
+            />
           </Dialog.Description>
         </Dialog.Content>
       </Dialog.Overlay>
