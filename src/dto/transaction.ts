@@ -5,6 +5,15 @@ enum TRANSACTION_TYPE {
 
 export type TransactionType = keyof typeof TRANSACTION_TYPE
 
+export interface ITransaction {
+  id: number
+  description: string
+  price: number
+  category: string
+  type: TransactionType
+  createdAt: string
+}
+
 const NEW_TRANSACTION_FORM_DEFAULT_VALUES = {
   description: '',
   amount: undefined,
@@ -12,4 +21,4 @@ const NEW_TRANSACTION_FORM_DEFAULT_VALUES = {
   type: TRANSACTION_TYPE.income,
 }
 
-export { TRANSACTION_TYPE, NEW_TRANSACTION_FORM_DEFAULT_VALUES }
+export { NEW_TRANSACTION_FORM_DEFAULT_VALUES, TRANSACTION_TYPE }
