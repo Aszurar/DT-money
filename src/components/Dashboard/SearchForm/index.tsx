@@ -1,18 +1,22 @@
-import * as zod from 'zod'
-import * as Input from '../../Input'
-import { Button } from '../../Button'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { MagnifyingGlass } from '@phosphor-icons/react'
 import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from 'zod'
+
+import { useTransactions } from '../../../hooks/useTransactions'
+import { Button } from '../../Button'
+import * as Input from '../../Input'
 import { Loading } from '../../Loading'
 
 const searchFormSchema = zod.object({
-  query: zod.string().trim().min(1, 'Digite pelo menos 1 caractere'),
+  query: zod.string().trim(),
 })
 
 type SearchFormProps = zod.infer<typeof searchFormSchema>
 
 export function SearchForm() {
+  const { fetchTransactions } = useTransactions()
+
   const {
     register,
     handleSubmit,
@@ -22,8 +26,7 @@ export function SearchForm() {
   })
 
   async function handleSearchTransactions(data: SearchFormProps) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
+    await fetchTransactions(data.query)
   }
 
   const submitButtonContent = isSubmitting ? (
@@ -53,7 +56,7 @@ export function SearchForm() {
       <Button
         type="submit"
         variant="outline"
-        className="w-37 min-w-37 h-13.5"
+        className="h-13.5 w-37 min-w-37"
         disabled={isSubmitting}
       >
         {submitButtonContent}

@@ -1,15 +1,25 @@
-import * as Table from './Table'
-
+import { useSummary } from '../../hooks/useSummary'
+import { useTransactions } from '../../hooks/useTransactions'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
 import { HighLightCard } from './HighLightCard'
 import { SearchForm } from './SearchForm'
+import * as Table from './Table'
 
 export function Dashboard() {
+  const { transactions } = useTransactions()
+  const summery = useSummary()
   return (
     <div className="mx-auto max-w-app px-6">
       <section className="-mt-20 flex gap-8">
-        <HighLightCard value="20.000,00" />
-        <HighLightCard variant="outcome" value="12.000,00" />
-        <HighLightCard variant="total" value="32.000,00" />
+        <HighLightCard value={priceFormatter.format(summery.income)} />
+        <HighLightCard
+          variant="outcome"
+          value={priceFormatter.format(summery.outcome)}
+        />
+        <HighLightCard
+          variant="total"
+          value={priceFormatter.format(summery.balance)}
+        />
       </section>
 
       <SearchForm />
@@ -17,44 +27,21 @@ export function Dashboard() {
       <section className="mt-6">
         <Table.Root>
           <Table.Body>
-            <Table.Row>
-              <Table.Data>Desenvolvimento de website</Table.Data>
-              <Table.Data variant="income">R$ 12.000,00</Table.Data>
-              <Table.Data>Desenvolvimento</Table.Data>
-              <Table.Data>20/02/2021</Table.Data>
-            </Table.Row>
-
-            <Table.Row>
-              <Table.Data>Desenvolvimento de website</Table.Data>
-              <Table.Data variant="outcome">R$ 12.000,00</Table.Data>
-              <Table.Data>Desenvolvimento</Table.Data>
-              <Table.Data>20/02/2021</Table.Data>
-            </Table.Row>
-
-            <Table.Row>
-              <Table.Data>Desenvolvimento de website</Table.Data>
-              <Table.Data variant="income">R$ 12.000,00</Table.Data>
-              <Table.Data>Desenvolvimento</Table.Data>
-              <Table.Data>20/02/2021</Table.Data>
-            </Table.Row>
-            <Table.Row>
-              <Table.Data>Desenvolvimento de website</Table.Data>
-              <Table.Data variant="income">R$ 12.000,00</Table.Data>
-              <Table.Data>Desenvolvimento</Table.Data>
-              <Table.Data>20/02/2021</Table.Data>
-            </Table.Row>
-            <Table.Row>
-              <Table.Data>Desenvolvimento de website</Table.Data>
-              <Table.Data variant="outcome">R$ 12.000,00</Table.Data>
-              <Table.Data>Desenvolvimento</Table.Data>
-              <Table.Data>20/02/2021</Table.Data>
-            </Table.Row>
-            <Table.Row>
-              <Table.Data>Desenvolvimento de website</Table.Data>
-              <Table.Data variant="income">R$ 12.000,00</Table.Data>
-              <Table.Data>Desenvolvimento</Table.Data>
-              <Table.Data>20/02/2021</Table.Data>
-            </Table.Row>
+            {transactions.map((transaction) => (
+              <Table.Row key={transaction.id}>
+                <Table.Data>{transaction.description}</Table.Data>
+                <Table.Data variant={transaction.type}>
+                  {new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  }).format(transaction.price)}
+                </Table.Data>
+                <Table.Data>{transaction.category}</Table.Data>
+                <Table.Data>
+                  {dateFormatter.format(new Date(transaction.createdAt))}
+                </Table.Data>
+              </Table.Row>
+            ))}
           </Table.Body>
         </Table.Root>
       </section>
