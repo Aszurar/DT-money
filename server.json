@@ -9,14 +9,6 @@
       "createdAt": "2024-02-02T13:34:41.094Z"
     },
     {
-      "id": 2,
-      "description": "Pizza",
-      "type": "outcome",
-      "price": 6000,
-      "category": "Alimentação",
-      "createdAt": "2024-02-02T13:34:41.094Z"
-    },
-    {
       "description": "Sushisão da massa",
       "price": 100,
       "category": "Alimentação",
@@ -33,11 +25,11 @@
       "id": 4
     },
     {
-      "description": "Pizza Gigante de 6 Queijos",
-      "price": 10,
-      "category": "Alimentação",
+      "description": "Jogo",
+      "price": 60,
+      "category": "Lazer",
       "type": "outcome",
-      "createdAt": "2024-03-02T16:44:34.585Z",
+      "createdAt": "2024-07-06T13:12:31.278Z",
       "id": 5
     }
   ]
