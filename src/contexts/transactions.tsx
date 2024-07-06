@@ -51,17 +51,14 @@ function TransactionsProvider({
     fetchTransactions()
   }, [])
 
-  const contextValues =
-    // useMemo(
-    // () => (
-    {
+  const contextValues = useMemo(
+    () => ({
       transactions,
       fetchTransactions,
       createTransaction,
-    }
-  //   ),
-  //   [transactions],
-  // )
+    }),
+    [transactions],
+  )
 
   return (
     <TransactionsContext.Provider value={contextValues}>
