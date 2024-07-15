@@ -1,14 +1,16 @@
+import { isAfter } from 'date-fns'
 import React, { createContext, useEffect, useMemo, useState } from 'react'
 
 import { ITransaction } from '../dto/transaction'
-import { api } from '../lib/api'
+import { getTransactions } from '../storage/transactions/get-transactions'
+import { registerTransaction } from '../storage/transactions/register-transaction'
 
 type INewTransaction = Omit<ITransaction, 'id' | 'createdAt'>
 
 interface TransactionsContextProps {
   transactions: ITransaction[]
-  fetchTransactions: (query?: string) => Promise<void>
-  createTransaction: (newTransaction: INewTransaction) => Promise<void>
+  fetchTransactions: (query?: string) => void
+  createTransaction: (newTransaction: INewTransaction) => void
 }
 
 interface TransactionsProviderProps {
@@ -22,29 +24,45 @@ function TransactionsProvider({
 }: Readonly<TransactionsProviderProps>) {
   const [transactions, setTransactions] = useState<ITransaction[]>([])
 
-  async function fetchTransactions(query?: string) {
-    const response = await api.get<ITransaction[]>('/transactions', {
-      params: {
-        _sort: 'createdAt',
-        _order: 'desc',
-        q: query,
+  function fetchTransactions(query?: string) {
+    const response = getTransactions()
+
+    const DATE_B_AFTER = -1
+    const DATE_B_BEFORE = 1
+    const transactionsSortedAndOrderedByCreatedAtAndDesc = response.sort(
+      (a, b) => {
+        // ordered by createdAt and desc
+        if (isAfter(new Date(b.createdAt), new Date(a.createdAt))) {
+          return DATE_B_BEFORE // b is more recent, is set before a
+        } else {
+          return DATE_B_AFTER // b is more old, but is set after a
+        }
       },
-    })
-    setTransactions(response.data)
-  }
-
-  async function createTransaction(newTransaction: INewTransaction) {
-    const newTransactionWithCreatedAt = {
-      ...newTransaction,
-      createdAt: new Date(),
-    }
-
-    const response = await api.post(
-      '/transactions',
-      newTransactionWithCreatedAt,
     )
 
-    setTransactions((prevTransactions) => [response.data, ...prevTransactions])
+    let transactionsFiltered
+
+    if (!!query && !!query.trim()) {
+      transactionsFiltered =
+        transactionsSortedAndOrderedByCreatedAtAndDesc.filter((transaction) =>
+          transaction.description.toLowerCase().includes(query.toLowerCase()),
+        )
+    }
+
+    const transactionsResults =
+      transactionsFiltered || transactionsSortedAndOrderedByCreatedAtAndDesc
+
+    setTransactions(transactionsResults)
+  }
+
+  function createTransaction(newTransaction: INewTransaction) {
+    const newTransactionWithCreatedAt = {
+      ...newTransaction,
+      id: crypto.randomUUID(),
+      createdAt: new Date().toISOString(),
+    }
+
+    registerTransaction(newTransactionWithCreatedAt)
   }
 
   useEffect(() => {

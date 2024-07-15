@@ -31,8 +31,8 @@ export type NewTransactionProps = zod.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionForm({
   handleChangeModalStatus,
-}: NewTransactionFormProps) {
-  const { createTransaction } = useTransactions()
+}: Readonly<NewTransactionFormProps>) {
+  const { createTransaction, fetchTransactions } = useTransactions()
 
   const {
     reset,
@@ -49,10 +49,11 @@ export function NewTransactionForm({
 
   async function handleAddNewTransaction(data: NewTransactionProps) {
     try {
-      await createTransaction(data)
+      createTransaction(data)
       reset()
       handleChangeModalStatus(false)
       toast.success('Transação cadastrada com sucesso!')
+      fetchTransactions()
     } catch (error) {
       console.error(error)
       toast.error('Erro ao cadastrar transação')

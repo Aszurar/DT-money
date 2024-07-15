@@ -6,7 +6,7 @@ enum TRANSACTION_TYPE {
 export type TransactionType = keyof typeof TRANSACTION_TYPE
 
 export interface ITransaction {
-  id: number
+  id: string
   description: string
   price: number
   category: string
