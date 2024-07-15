@@ -33,12 +33,9 @@ export function NewTransactionModal({
               <X className="text-2xl text-gray-500 group-hover:text-gray-300" />
             </Dialog.Close>
           </header>
-
-          <Dialog.Description>
-            <NewTransactionForm
-              handleChangeModalStatus={handleChangeModalStatus}
-            />
-          </Dialog.Description>
+          <NewTransactionForm
+            handleChangeModalStatus={handleChangeModalStatus}
+          />
         </Dialog.Content>
       </Dialog.Overlay>
     </Dialog.Portal>
