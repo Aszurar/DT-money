@@ -13,11 +13,13 @@ export function Dashboard() {
   const balanceFormatted = priceFormatter.format(summery.balance)
 
   return (
-    <div className="mx-auto max-w-app  px-6">
+    <main className="mx-auto max-w-app  px-6">
       <section
+        tabIndex={0}
         className={`-mt-20 flex 
           gap-8 overflow-x-scroll px-1 pb-3 scrollbar-thin 
-          scrollbar-track-transparent scrollbar-thumb-green-300 scrollbar-thumb-rounded-xl sm:gap-8 sm:px-0 sm:pb-0 `}
+          scrollbar-track-transparent scrollbar-thumb-green-300 
+          scrollbar-thumb-rounded-xl sm:gap-8 sm:px-0 sm:pb-0 `}
       >
         <HighLightCard value={incomeFormatted} />
         <HighLightCard variant="outcome" value={outcomeFormatted} />
@@ -27,13 +29,12 @@ export function Dashboard() {
       <SearchForm />
 
       <section
-        className="phone-lg:max-h-120 mt-6  
-        flex max-h-64 w-full 
-          flex-1 overflow-auto scrollbar-thin 
-          scrollbar-track-transparent scrollbar-thumb-green-300
-          phone-md:max-h-80 phone-xl:max-h-130 iPhone-se:max-h-64 
-          notebook-sm:max-h-25 notebook-sm-2:max-h-50 notebook-md:max-h-75 
-          notebook-lg:max-h-100 notebook-xl:max-h-125"
+        tabIndex={0}
+        className="phone-lg:max-h-120 mt-6  flex max-h-64 w-full flex-1 
+          overflow-auto scrollbar-thin scrollbar-track-transparent 
+          scrollbar-thumb-green-300 phone-md:max-h-80 phone-xl:max-h-130 
+          iPhone-se:max-h-64 notebook-sm:max-h-25 notebook-sm-2:max-h-50 
+          notebook-md:max-h-75 notebook-lg:max-h-100 notebook-xl:max-h-125"
       >
         <Table.Root>
           <Table.Body>
@@ -41,6 +42,6 @@ export function Dashboard() {
           </Table.Body>
         </Table.Root>
       </section>
-    </div>
+    </main>
   )
 }
