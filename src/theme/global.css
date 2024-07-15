@@ -20,13 +20,10 @@
       }
   }
 
-::-webkit-scrollbar {
-      width: 0.5rem;
-    }
 
 ::-webkit-scrollbar-track {
       @apply dark:bg-zinc-700 rounded-lg
-    }
+  }
  
 ::-webkit-scrollbar-thumb {
       @apply bg-green-500 rounded-lg 

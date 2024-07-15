@@ -1,47 +1,43 @@
 import { useSummary } from '../../hooks/useSummary'
-import { useTransactions } from '../../hooks/useTransactions'
-import { dateFormatter, priceFormatter } from '../../utils/formatter'
+import { priceFormatter } from '../../utils/formatter'
 import { HighLightCard } from './HighLightCard'
 import { SearchForm } from './SearchForm'
 import * as Table from './Table'
+import { TableRows } from './TableRow'
 
 export function Dashboard() {
-  const { transactions } = useTransactions()
   const summery = useSummary()
+
+  const outcomeFormatted = priceFormatter.format(summery.outcome)
+  const incomeFormatted = priceFormatter.format(summery.income)
+  const balanceFormatted = priceFormatter.format(summery.balance)
+
   return (
-    <div className="mx-auto max-w-app px-6">
-      <section className="-mt-20 flex gap-8">
-        <HighLightCard value={priceFormatter.format(summery.income)} />
-        <HighLightCard
-          variant="outcome"
-          value={priceFormatter.format(summery.outcome)}
-        />
-        <HighLightCard
-          variant="total"
-          value={priceFormatter.format(summery.balance)}
-        />
+    <div className="mx-auto max-w-app  px-6">
+      <section
+        className={`-mt-20 flex 
+          gap-8 overflow-x-scroll px-1 pb-3 scrollbar-thin 
+          scrollbar-track-transparent scrollbar-thumb-green-300 scrollbar-thumb-rounded-xl sm:gap-8 sm:px-0 sm:pb-0 `}
+      >
+        <HighLightCard value={incomeFormatted} />
+        <HighLightCard variant="outcome" value={outcomeFormatted} />
+        <HighLightCard variant="total" value={balanceFormatted} />
       </section>
 
       <SearchForm />
 
-      <section className="mt-6">
+      <section
+        className="phone-lg:max-h-120 mt-6  
+        flex max-h-64 w-full 
+          flex-1 overflow-auto scrollbar-thin 
+          scrollbar-track-transparent scrollbar-thumb-green-300
+          phone-md:max-h-80 phone-xl:max-h-130 iPhone-se:max-h-64 
+          notebook-sm:max-h-25 notebook-sm-2:max-h-50 notebook-md:max-h-75 
+          notebook-lg:max-h-100 notebook-xl:max-h-125"
+      >
         <Table.Root>
           <Table.Body>
-            {transactions.map((transaction) => (
-              <Table.Row key={transaction.id}>
-                <Table.Data>{transaction.description}</Table.Data>
-                <Table.Data variant={transaction.type}>
-                  {new Intl.NumberFormat('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                  }).format(transaction.price)}
-                </Table.Data>
-                <Table.Data>{transaction.category}</Table.Data>
-                <Table.Data>
-                  {dateFormatter.format(new Date(transaction.createdAt))}
-                </Table.Data>
-              </Table.Row>
-            ))}
+            <TableRows />
           </Table.Body>
         </Table.Root>
       </section>

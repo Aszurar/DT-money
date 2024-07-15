@@ -7,8 +7,8 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const highLightCard = tv({
   slots: {
-    container:
-      'flex flex-col bg-gray-600 w-highlightcard drop-shadow-md p-6 gap-3 rounded-md',
+    container: `flex flex-col bg-gray-600 w-highlightcard min-w-highlightcard p-6 
+      gap-3 rounded-md drop-shadow-md `,
     icon: 'text-2.5xl self-center',
   },
   variants: {
