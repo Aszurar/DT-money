@@ -6,6 +6,9 @@ import { Dashboard } from './components/Dashboard'
 import { Header } from './components/Header'
 import { ResponsivenessProvider } from './contexts/responsiveness'
 import { TransactionsProvider } from './contexts/transactions'
+import { axeAccessibilityReporter } from './utils/axeAccessibilityReporter'
+
+axeAccessibilityReporter()
 
 export function App() {
   return (
