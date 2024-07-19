@@ -7,9 +7,10 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const highLightCard = tv({
   slots: {
-    container:
-      'flex flex-col bg-gray-600 w-highlightcard drop-shadow-md p-6 gap-3 rounded-md',
+    container: `flex flex-col bg-gray-600 w-highlightcard min-w-highlightcard p-6 
+    gap-3 rounded-md drop-shadow-md `,
     icon: 'text-2.5xl self-center',
+    label: 'text-gray-300',
   },
   variants: {
     variant: {
@@ -21,6 +22,7 @@ const highLightCard = tv({
       },
       total: {
         container: 'bg-green-700',
+        label: 'text-gray-200',
         icon: 'text-white',
       },
     },
@@ -36,7 +38,7 @@ type HighLightCardProps = VariantProps<typeof highLightCard> & {
 }
 
 export function HighLightCard({ variant, value }: HighLightCardProps) {
-  const { container, icon } = highLightCard({ variant })
+  const { container, icon, label } = highLightCard({ variant })
   const titleVariant = variant ?? 'income'
 
   const title = {
@@ -57,9 +59,7 @@ export function HighLightCard({ variant, value }: HighLightCardProps) {
   return (
     <div className={container()}>
       <header className="flex justify-between">
-        <h2 className="self-start text-gray-300 ">
-          {title[titleVariant].title}
-        </h2>
+        <h2 className={`self-start ${label()}`}>{title[titleVariant].title}</h2>
         {title[titleVariant].icon}
       </header>
 
