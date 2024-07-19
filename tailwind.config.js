@@ -24,7 +24,7 @@ export default {
       height: {
         header: '25vh',
         13.5: '3.375rem',
-        dashboard: 'calc(100vh - 22vh)',
+        dashboard: 'calc(100vh - 23vh)',
       },
       maxHeight: {
         25: '6.25rem',
