@@ -34,11 +34,9 @@ export function NewTransactionModal({
             </Dialog.Close>
           </header>
 
-          <Dialog.Description>
-            <NewTransactionForm
-              handleChangeModalStatus={handleChangeModalStatus}
-            />
-          </Dialog.Description>
+          <NewTransactionForm
+            handleChangeModalStatus={handleChangeModalStatus}
+          />
         </Dialog.Content>
       </Dialog.Overlay>
     </Dialog.Portal>

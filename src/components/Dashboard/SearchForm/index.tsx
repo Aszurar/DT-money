@@ -41,7 +41,7 @@ export function SearchForm() {
   return (
     <form
       onSubmit={handleSubmit(handleSearchTransactions)}
-      className="mt-16 flex justify-between rounded-md"
+      className="mt-16 flex items-center justify-between rounded-md"
     >
       <Input.Root>
         <Input.Container>
