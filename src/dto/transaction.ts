@@ -14,6 +14,12 @@ export interface ITransaction {
   createdAt: string
 }
 
+export type TransactionProps = Omit<ITransaction, 'price'> & { price: string }
+
+export type TableRowProps = {
+  transaction: TransactionProps
+}
+
 const NEW_TRANSACTION_FORM_DEFAULT_VALUES = {
   description: '',
   amount: undefined,
