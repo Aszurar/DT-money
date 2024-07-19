@@ -13,7 +13,7 @@ export function Dashboard() {
   const balanceFormatted = priceFormatter.format(summery.balance)
 
   return (
-    <main className="mx-auto max-w-app  px-6">
+    <main className="h-dashboard mx-auto max-w-app px-6">
       <section
         tabIndex={0}
         className={`-mt-20 flex 
