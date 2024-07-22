@@ -24,7 +24,7 @@
 
 <div align="center">
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/03650fc4-9b07-46f5-abd4-cb2e79e256b6/deploy-status)](https://app.netlify.com/sites/redux-zustand-app/deploys) [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/) [![React](https://img.shields.io/badge/-React-%2320232a.svg?style=flat&logo=react&link=https://react.dev)](https://react.dev/) [![Redux](https://img.shields.io/badge/Redux-%23593d88.svg?style=flat&logo=redux&link=https://redux.js.org/)](https://redux.js.org/) [![Zustand](https://img.shields.io/badge/Zustand-39312a.svg?style=flat&logo=react&link=https://redux.js.org/)](https://redux.js.org/)  [![TailwindCSS](https://img.shields.io/badge/Tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white&link=https://tailwindcss.com/)](https://tailwindcss.com/) [![Radix UI](https://img.shields.io/badge/Radix%20UI-161618.svg?style=flat&logo=radix-ui&logoColor=white)](https://www.radix-ui.com/) [![TypeScript](https://img.shields.io/badge/-TypeScript-%23007ACC?style=?style=flat-square&logo=typescript&logoColor=white&link=https://www.typescriptlang.org/)](https://www.typescriptlang.org/) [![JavaScript](https://img.shields.io/badge/-JavaScript-%23323330.svg?style=flat&logo=javascript&link=https://www.javascript.com/)](https://www.javascript.com/) [![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white&link=https://developer.mozilla.org/pt-BR/docs/Web/HTML)](https://developer.mozilla.org/pt-BR/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&link=https://www.w3schools.com/css/)](https://www.w3schools.com/css/) [![Yarn](https://img.shields.io/badge/-yarn-%232C8EBB?style=flat&logo=yarn&logoColor=white&link=https://yarnpkg.com/)](https://yarnpkg.com/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/771472dd-d9ae-4c31-a90c-274c73c071c8/deploy-status)](https://app.netlify.com/sites/newdtmoney-aszurar/deploys) [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/) [![React](https://img.shields.io/badge/-React-%2320232a.svg?style=for-the-badge&logo=react&link=https://react.dev)](https://react.dev/) [![TailwindCSS](https://img.shields.io/badge/Tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white&link=https://tailwindcss.com/)](https://tailwindcss.com/) [![Radix UI](https://img.shields.io/badge/Radix%20UI-161618.svg?style=for-the-badge&logo=radix-ui&logoColor=white)](https://www.radix-ui.com/) [![TypeScript](https://img.shields.io/badge/-TypeScript-%23007ACC?style=for-the-badge&logo=typescript&logoColor=white&link=https://www.typescriptlang.org/)](https://www.typescriptlang.org/) [![JavaScript](https://img.shields.io/badge/-JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&link=https://www.javascript.com/)](https://www.javascript.com/) [![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&link=https://developer.mozilla.org/pt-BR/docs/Web/HTML)](https://developer.mozilla.org/pt-BR/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&link=https://www.w3schools.com/css/)](https://www.w3schools.com/css/) [![Yarn](https://img.shields.io/badge/-yarn-%232C8EBB?style=for-the-badge&logo=yarn&logoColor=white&link=https://yarnpkg.com/)](https://yarnpkg.com/)
 </div>
 
 <div align="center">
@@ -84,7 +84,7 @@
   4. Responsividade para dispositivos móveis.
   5. Acessibilidade ampliada com o cumprimento de todas regras e avisos do axe-core permitindo a navegação completa de teclado e leitores de voz.
 
-- **Cadastro**
+- **Pesquisa de movimentações**
 <div align="center" >
       <img src="https://i.imgur.com/mnlSptp.png" width="1000" alt="Pesquisa de movimentações">
 </div>
@@ -97,7 +97,7 @@
 <div align="center">
   <h3><a href="https://www.figma.com/design/XaDRpS7QidcQyb1TFtM5jc/DT-Money-%E2%9C%85?node-id=0-1&t=eoK7W6icuo7wrhig-0">DT Money</a></h3>
 
-  [![Design](https://i.imgur.com/frv6KX6.png)](https://www.figma.com/file/7LmOydy7HWvNRbmTr1Tkkf/dtmoney-Ignite?type=design&node-id=0-1&mode=design&t=1SGukE0ct1Da1lzu-0)
+  [![Design](https://i.imgur.com/frv6KX6.png)](https://www.figma.com/design/XaDRpS7QidcQyb1TFtM5jc/DT-Money-%E2%9C%85?node-id=0-1&t=eoK7W6icuo7wrhig-0)
 </div>
 
 ---
