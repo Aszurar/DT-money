@@ -13,7 +13,7 @@ export function Dashboard() {
   const balanceFormatted = priceFormatter.format(summery.balance)
 
   return (
-    <main className="h-dashboard mx-auto max-w-app px-6">
+    <main className="mx-auto h-dashboard max-w-app px-6">
       <section
         tabIndex={0}
         className={`-mt-20 flex 
@@ -30,11 +30,11 @@ export function Dashboard() {
 
       <section
         tabIndex={0}
-        className="phone-lg:max-h-120 mt-6  flex max-h-64 w-full flex-1 
-          overflow-auto scrollbar-thin scrollbar-track-transparent 
-          scrollbar-thumb-green-300 phone-md:max-h-80 phone-xl:max-h-130 
-          iPhone-se:max-h-64 notebook-sm:max-h-25 notebook-sm-2:max-h-50 
-          notebook-md:max-h-75 notebook-lg:max-h-100 notebook-xl:max-h-125"
+        className="phone-xl:max-h-120 mt-6  flex max-h-64 w-full flex-1 
+          overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-green-300 
+          phone-md:max-h-80 phone-lg:max-h-108 iPhone-se:max-h-64 
+          notebook-sm:max-h-25 notebook-sm-2:max-h-50 notebook-md:max-h-75 
+          notebook-lg:max-h-100 notebook-xl:max-h-125"
       >
         <Table.Root>
           <Table.Body>

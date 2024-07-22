@@ -34,9 +34,8 @@ export default {
         100: '25rem',
         108: '27rem',
         112: '28rem',
-        118: '29.5rem',
+        120: '30rem',
         125: '31.25rem',
-        130: '32.5rem',
       },
 
       maxWidth: {
