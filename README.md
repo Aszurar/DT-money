@@ -13,12 +13,16 @@
 - O objetivo desse projeto é entender a forma como podemos consumir APIs, melhorar a performance prevenindo renderizações desnecessárias e praticar um pouco mais a construção de formulários.
 
 - O site foi publicado com CI/CD por meio da plataforma **[Netlify](https://www.netlify.com/)**.
-- Acesse e teste o projeto em: **<https://redux-zustand-app.netlify.app>**
+- Acesse e teste o projeto em: **<https://newdtmoney-aszurar.netlify.app>**
 
   <div align="center">
-    <h3><a href="https://redux-zustand-app.netlify.app">Redux-Zustand App</a></h3>
+    <h3><a href="https://newdtmoney-aszurar.netlify.app">DT Money/a></h3>
 
-    https://github.com/Aszurar/redux-and-zustand/assets/64987824/9206bf82-d9bc-4c8e-a9a0-93e005027544
+    
+
+  https://github.com/user-attachments/assets/d2a55c11-5caf-4120-b8e4-8b42ee9eebc0
+
+
 
   </div>
 
@@ -43,12 +47,12 @@
 ---
 
 <div align="center">
-    <img src="https://i.imgur.com/7qInlx1.gif" width="400" alt="Gif mostrando o projeto">
+    <img src="https://i.imgur.com/iq0ZbX9.gif" width="400" alt="Gif mostrando o projeto">
 </div>
 
 <div align="center" >
 
-**[Vídeo no Youtube](https://www.youtube.com/watch?v=8NzPfT-74dM)**
+**[Vídeo no Youtube](https://www.youtube.com/watch?v=EqQ_cgrPPvI)**
 
 </div>
 
@@ -150,7 +154,7 @@
 
 ## :truck: Entrega e distribuição continua
 
-**<https://redux-zustand-app.netlify.app>**
+**<https://newdtmoney-aszurar.netlify.app>**
 
 - Para a publicação da aplicação foi por meio da plataforma **[Netlify](https://www.netlify.com/)** onde é possível publicar de forma rápida, fácil e simples projetos React que estão hospedados no GitHub, GitLab, dentre outras plataformas de repositório remoto de graça.
 - Com isso, o CI/CD já é aplicado automaticamente por meio dessa plataforma definindo a branch de produção, sempre que houver uma atualização nela, será gerado uma nova versão do projeto e já publicado.
