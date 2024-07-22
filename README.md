@@ -16,7 +16,7 @@
 - Acesse e teste o projeto em: **<https://newdtmoney-aszurar.netlify.app>**
 
   <div align="center">
-    <h3><a href="https://newdtmoney-aszurar.netlify.app">DT Money/a></h3>
+    <h3><a href="https://newdtmoney-aszurar.netlify.app">DT Money</a></h3>
 
     
 
