@@ -10,7 +10,7 @@
 
 - O projeto tem o intuito de gerenciar seus gastos e ganhos. Podemos registrar entradas, saídas com categorias, valores e  por fim calcularmos seu saldo.
 
-- O objetivo do projeto é entender e praticar os conceitos de como podemos consumir APIs, usar os métodos HTTP: GET, POST, PUT, PATCH e DELETE em conjunto com axios, assim como a própria configuração do axios. Além disso, praticamos mais sobre formulários com React Hook Form focando em componentes Controlados e focamos também em performance verificando as renderizações dos componentes no navegador por meio da extensão React Dev Tools e usamos hooks como useCallback, useMemo e métodos como memo para prevenir renderizações desnecessárias.
+- O objetivo desse projeto é entender a forma como podemos consumir APIs, melhorar a performance prevenindo renderizações desnecessárias e praticar um pouco mais a construção de formulários.
 
 - O site foi publicado com CI/CD por meio da plataforma **[Netlify](https://www.netlify.com/)**.
 - Acesse e teste o projeto em: **<https://redux-zustand-app.netlify.app>**
