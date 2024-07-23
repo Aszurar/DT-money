@@ -66,7 +66,7 @@
 
 - A acessibilidade foi levada em consideração, com o uso da lib **[axe-core](https://www.npmjs.com/package/@axe-core/react)** para testes e correções de acessibilidade assim como leitor de tela ChromeVox e o uso do **[Radix UI](https://www.radix-ui.com/)** para componentes acessíveis como Modais e Tooltips.
 
-- Esse projeto é derivado da formação Reactda **[Rocketseat](https://www.rocketseat.com.br/)**.
+- Esse projeto é derivado da formação React da **[Rocketseat](https://www.rocketseat.com.br/)**.
   
 - **Tela inicial**
 
